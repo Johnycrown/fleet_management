@@ -2,7 +2,6 @@ package com.johny.fleet.management.trip.controller;
 
 import com.johny.fleet.management.trip.domain.Trip;
 import com.johny.fleet.management.trip.service.TripService;
-import com.johny.fleet.management.vehicle.domain.Vehicle;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
