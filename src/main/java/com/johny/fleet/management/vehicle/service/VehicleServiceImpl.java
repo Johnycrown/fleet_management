@@ -1,5 +1,6 @@
 package com.johny.fleet.management.vehicle.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.johny.fleet.management.vehicle.domain.Vehicle;
 import com.johny.fleet.management.vehicle.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,8 @@ import java.util.List;
 public class VehicleServiceImpl implements VehicleService {
 
     private final VehicleRepository vehicleRepository;
+    ObjectMapper objectMapper = new ObjectMapper();
+
 
 
     @Override
@@ -34,6 +37,18 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public void deleteById(Long id) {
         vehicleRepository.deleteById(id);
+    }
+
+
+    public void updateVehicleData(Long vehicleId, double latitude, double longitude, double speed, double fuelLevel) {
+        Vehicle vehicle = vehicleRepository.findById(vehicleId).orElse(null);
+        if (vehicle != null) {
+            vehicle.setLatitude(latitude);
+            vehicle.setLongitude(longitude);
+            vehicle.setSpeed(speed);
+            vehicle.setFuelLevel(fuelLevel);
+            vehicleRepository.save(vehicle);
+        }
     }
 
 

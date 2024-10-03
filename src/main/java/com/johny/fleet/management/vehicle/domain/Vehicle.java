@@ -21,5 +21,10 @@ public class Vehicle {
     private String status;
     private String model;
 
+    private double latitude;
+    private double longitude;
+    private double speed;
+    private double fuelLevel;
+
 
 }
