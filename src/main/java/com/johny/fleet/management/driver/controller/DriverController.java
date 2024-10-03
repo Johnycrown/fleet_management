@@ -16,27 +16,27 @@ public class DriverController {
 
 
     @GetMapping
-    public List<Driver> getAllVehicles() {
+    public List<Driver> getAllDriver() {
         return driverService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Driver getVehicleById(@PathVariable Long id) {
+    public Driver getDriverById(@PathVariable Long id) {
         return driverService.findById(id);
     }
 
     @PostMapping
-    public Driver createVehicle(@RequestBody Driver driver) {
+    public Driver createDriver(@RequestBody Driver driver) {
         return driverService.save(driver);
     }
 
     @PutMapping("/{id}")
-    public Vehicle updateVehicle(@PathVariable Long id, @RequestBody Vehicle vehicle) {
+    public Vehicle updateDriver(@PathVariable Long id, @RequestBody Vehicle vehicle) {
         return null;
     }
 
     @DeleteMapping("/{id}")
-    public void deleteVehicle(@PathVariable Long id) {
+    public void deleteDriver(@PathVariable Long id) {
         driverService.deleteById(id);
     }
 
